@@ -209,4 +209,401 @@ h1{
 .quote{
     margin-top:20px;
     padding:20px;
-   
+    border-radius:20px;
+    background:rgba(255,255,255,.25);
+    font-size:18px;
+    font-style:italic;
+}
+
+.player{
+    margin:15px 0;
+}
+
+.footer{
+    margin-top:30px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* UÇAN KALPLER */
+.heart{
+    position:fixed;
+    bottom:-50px;
+    pointer-events:none;
+    z-index:1;
+    animation:fly linear forwards;
+}
+
+@keyframes fly{
+    0%{
+        transform:translateY(0) rotate(0deg) scale(.7);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg) scale(1.3);
+        opacity:0;
+    }
+}
+
+@media(max-width:500px){
+
+    .container{
+        margin:15px auto;
+        padding:25px 15px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    .top-heart{
+        font-size:58px;
+    }
+
+    .message{
+        font-size:14px;
+    }
+
+    .counter{
+        font-size:17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- GİRİŞ -->
+<div id="login">
+
+    <div class="login-box">
+
+        <div class="login-heart">💗</div>
+
+        <h1>Hacer ♥ Kadir</h1>
+
+        <p>
+            Bu site sadece bizim için... 🤍<br>
+            Girmek için özel kodu yaz.
+        </p>
+
+        <input
+            id="password"
+            type="password"
+            inputmode="numeric"
+            maxlength="4"
+            placeholder="••••"
+        >
+
+        <button onclick="login()">
+            💕 Giriş Yap
+        </button>
+
+        <div id="error">
+            Kod yanlış... 💔
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ANA SİTE -->
+<div id="site">
+
+<div class="container">
+
+    <div class="top-heart">💗</div>
+
+    <h1>Hacer ♥ Kadir</h1>
+
+    <div class="subtitle">
+        İki kalp, tek hikâye... 💕
+    </div>
+
+    <div class="flowers">
+        🌸 🌷 🌹 💐 🌹 🌷 🌸
+    </div>
+
+    <!-- TARİH -->
+    <div class="date-card">
+
+        <div class="date">
+            💞 13 Mart 2026 — 16:00 💞
+        </div>
+
+        <div class="counter-title">
+            Birlikte olduğumuz süre
+        </div>
+
+        <div class="counter" id="counter">
+            Hesaplanıyor...
+        </div>
+
+    </div>
+
+    <!-- MESAJ -->
+    <div class="section">
+
+        <h2>💌 Hacer'ime</h2>
+
+        <div class="message">
+
+            <p><b>Hayatım,</b></p>
+
+            <p>
+            Hani ilk bana “...” demiştin ya...
+            İşte o gün başladı bizim hikâyemiz. ❤️
+            </p>
+
+            <p>
+            Çok şükür Rabb'ül Âlemîn bana seni nasip etti
+            ve seninle sevgili olduk.
+            </p>
+
+            <p>
+            Yeri geldi kavga ettik, yeri geldi ayrıldık,
+            yeri geldi birbirimizi anlayamadık.
+            Ama ne olursa olsun, hep tekrar birbirimize döndük
+            ve barıştık.
+            </p>
+
+            <p>
+            Ben Rabb'ime bunun için binlerce kez şükrediyorum.
+            Çünkü seni hayatıma kattığı için gerçekten çok mutluyum.
+            </p>
+
+            <p>
+            Bana deseler ki:
+            <br><br>
+            <b>
+            “Bu hayata tekrar gelsen, neyi tekrar yapmak isterdin?”
+            </b>
+            </p>
+
+            <p>
+            Hiç düşünmeden,
+            <b>“Hacer'imle tekrar sevgili olmak isterdim.”</b>
+            derdim.
+            </p>
+
+            <p>
+            Çünkü seni ne kadar sevdiğimi anlatmaya kelimeler yetmez.
+            </p>
+
+            <p>
+            Belki seni babandan istemek ve seni almak çok zor olacak.
+            Ama ne olursa olsun seni almak için elimden geleni yapacağım.
+            </p>
+
+            <p>
+            Çünkü sen benim için çok değerlisin,
+            canım benim. ❤️🤍
+            </p>
+
+        </div>
+
+        <div class="quote">
+            “Bu hayata tekrar gelsem bile,
+            yine seni seçerdim.” 💗
+        </div>
+
+    </div>
+
+    <!-- ŞARKILAR -->
+    <div class="section">
+
+        <h2>🎵 Bizim Şarkılarımız</h2>
+
+        <div class="player">
+            <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/3GQm1FfMFmpoPyOwlo4bqL?utm_source=generator"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="player">
+            <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/0SIEoNWvdG94ub3Zf8dZxf?utm_source=generator"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="player">
+            <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/24XRuHPSpCzIRgF7uCIaMR?utm_source=generator"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+    <div class="flowers">
+        🌸 💗 🌹 💕 🌷 💗 🌸
+    </div>
+
+    <div class="footer">
+        Hacer ♥ Kadir
+        <br><br>
+        Sonsuza kadar... 🤍
+    </div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* GİRİŞ KODU */
+
+function login(){
+
+    const password =
+        document.getElementById("password").value;
+
+    const error =
+        document.getElementById("error");
+
+    if(password === "0423"){
+
+        document.getElementById("login").style.display="none";
+
+        document.getElementById("site").style.display="block";
+
+        document.body.style.overflowX="hidden";
+
+    }else{
+
+        error.style.display="block";
+
+        document.getElementById("password").value="";
+
+    }
+}
+
+
+/* ENTER İLE GİRİŞ */
+
+document.getElementById("password").addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+            login();
+        }
+
+    }
+);
+
+
+/* SAYAÇ */
+
+const startDate =
+    new Date("2026-03-13T16:00:00");
+
+function updateCounter(){
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if(difference < 0){
+
+        document.getElementById("counter").innerHTML =
+        "Hikâyemiz başlamak üzere... 💗";
+
+        return;
+    }
+
+    let totalSeconds =
+        Math.floor(difference / 1000);
+
+    let days =
+        Math.floor(totalSeconds / 86400);
+
+    let hours =
+        Math.floor((totalSeconds % 86400) / 3600);
+
+    let minutes =
+        Math.floor((totalSeconds % 3600) / 60);
+
+    let seconds =
+        totalSeconds % 60;
+
+    document.getElementById("counter").innerHTML =
+        days + " gün " +
+        hours + " saat " +
+        minutes + " dakika " +
+        seconds + " saniye 💕";
+}
+
+updateCounter();
+
+setInterval(updateCounter,1000);
+
+
+/* UÇAN KALPLER */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className="heart";
+
+    const emojis=[
+        "💗",
+        "💕",
+        "💖",
+        "💞",
+        "❤️",
+        "🤍",
+        "🌸"
+    ];
+
+    heart.innerHTML =
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+    heart.style.left =
+        Math.random()*100+"vw";
+
+    heart.style.fontSize =
+        (15+Math.random()*25)+"px";
+
+    heart.style.animationDuration =
+        (5+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },10000);
+}
+
+setInterval(createHeart,600);
+
+</script>
+
+</body>
+</html>
