@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Hacer ♥ Kadir</title>
 
 <style>
@@ -17,38 +16,121 @@ body{
     font-family:Arial,sans-serif;
     min-height:100vh;
     overflow-x:hidden;
-    color:#fff;
+    color:white;
     text-align:center;
-
     background:
     radial-gradient(circle at 20% 10%,#ffb6d9 0%,transparent 30%),
     radial-gradient(circle at 90% 80%,#ff8fc4 0%,transparent 35%),
     linear-gradient(135deg,#ff4f9a,#ff78b6,#ffc1dc);
 }
 
-/* PARILTI */
-.sparkle{
+/* GİRİŞ EKRANI */
+#login{
     position:fixed;
-    width:5px;
-    height:5px;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:
+    linear-gradient(135deg,#ff4f9a,#ff9ac7,#ffd1e5);
+}
+
+.login-box{
+    width:100%;
+    max-width:380px;
+    padding:35px 25px;
+    border-radius:30px;
+
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 15px 50px rgba(130,0,70,.25);
+}
+
+.login-heart{
+    font-size:65px;
+    animation:heartBeat 1.5s infinite;
+}
+
+.login-box h1{
+    margin:10px 0;
+    font-size:30px;
+}
+
+.login-box p{
+    margin-bottom:20px;
+    color:#fff;
+}
+
+#password{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+
+    text-align:center;
+    font-size:22px;
+    letter-spacing:8px;
+
     background:white;
-    border-radius:50%;
-    box-shadow:0 0 12px white;
-    animation:blink 2s infinite alternate;
-    z-index:0;
+    color:#d93682;
 }
 
-@keyframes blink{
-    from{opacity:.2;transform:scale(.5)}
-    to{opacity:1;transform:scale(1.5)}
+#login button{
+    width:100%;
+    margin-top:15px;
+    padding:14px;
+
+    border:none;
+    border-radius:15px;
+
+    background:#ff3f91;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+    box-shadow:0 6px 15px rgba(120,0,60,.2);
 }
 
-/* ANA KART */
+#login button:active{
+    transform:scale(.97);
+}
+
+#error{
+    margin-top:12px;
+    color:#fff;
+    font-weight:bold;
+    display:none;
+}
+
+/* ANA SİTE */
+#site{
+    display:none;
+}
+
+/* KALP */
+.top-heart{
+    font-size:70px;
+    animation:heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.2)}
+}
+
 .container{
     position:relative;
     z-index:2;
+
     width:92%;
     max-width:680px;
+
     margin:30px auto;
     padding:30px 20px;
 
@@ -60,17 +142,6 @@ body{
     box-shadow:0 15px 50px rgba(150,0,70,.25);
 }
 
-/* BAŞLIK */
-.top-heart{
-    font-size:70px;
-    animation:heartBeat 1.5s infinite;
-}
-
-@keyframes heartBeat{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.2)}
-}
-
 h1{
     font-size:42px;
     margin:5px 0;
@@ -80,10 +151,8 @@ h1{
 .subtitle{
     font-size:17px;
     margin-top:8px;
-    color:#fff5fa;
 }
 
-/* ÇİÇEKLER */
 .flowers{
     font-size:32px;
     margin:22px 0;
@@ -96,8 +165,6 @@ h1{
     border-radius:25px;
     padding:22px;
     margin:20px 0;
-
-    box-shadow:0 8px 25px rgba(120,0,60,.15);
 }
 
 .date{
@@ -107,7 +174,6 @@ h1{
 
 .counter-title{
     margin-top:15px;
-    font-size:15px;
 }
 
 .counter{
@@ -116,19 +182,16 @@ h1{
     font-weight:bold;
 }
 
-/* HİKAYE */
+/* BÖLÜMLER */
 .section{
     margin-top:25px;
     padding:25px;
 
     background:rgba(255,255,255,.16);
     border-radius:25px;
-
-    box-shadow:0 8px 25px rgba(120,0,60,.12);
 }
 
 .section h2{
-    color:#fff;
     margin-bottom:18px;
     font-size:25px;
 }
@@ -143,343 +206,7 @@ h1{
     margin-bottom:15px;
 }
 
-/* ÖZEL SÖZ */
 .quote{
     margin-top:20px;
     padding:20px;
-    border-radius:20px;
-    background:rgba(255,255,255,.25);
-    font-size:18px;
-    font-style:italic;
-}
-
-/* MÜZİK */
-.player{
-    margin:15px 0;
-}
-
-iframe{
-    max-width:100%;
-}
-
-/* ALT */
-.footer{
-    margin-top:30px;
-    font-size:18px;
-    font-weight:bold;
-}
-
-/* UÇAN KALPLER */
-.heart{
-    position:fixed;
-    bottom:-50px;
-    pointer-events:none;
-    z-index:1;
-    animation:fly linear forwards;
-}
-
-@keyframes fly{
-    0%{
-        transform:translateY(0) rotate(0deg) scale(.7);
-        opacity:0;
-    }
-
-    15%{
-        opacity:1;
-    }
-
-    100%{
-        transform:translateY(-110vh) rotate(360deg) scale(1.3);
-        opacity:0;
-    }
-}
-
-/* MOBİL */
-@media(max-width:500px){
-
-    .container{
-        margin:15px auto;
-        padding:25px 15px;
-    }
-
-    h1{
-        font-size:32px;
-    }
-
-    .top-heart{
-        font-size:58px;
-    }
-
-    .message{
-        font-size:14px;
-    }
-
-    .counter{
-        font-size:17px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- PARILTILAR -->
-<div class="sparkle" style="top:8%;left:10%"></div>
-<div class="sparkle" style="top:15%;left:80%"></div>
-<div class="sparkle" style="top:30%;left:20%"></div>
-<div class="sparkle" style="top:45%;left:90%"></div>
-<div class="sparkle" style="top:65%;left:8%"></div>
-<div class="sparkle" style="top:80%;left:85%"></div>
-
-<div class="container">
-
-    <div class="top-heart">💗</div>
-
-    <h1>Hacer ♥ Kadir</h1>
-
-    <div class="subtitle">
-        İki kalp, tek hikâye... 💕
-    </div>
-
-    <div class="flowers">
-        🌸 🌷 🌹 💐 🌹 🌷 🌸
-    </div>
-
-
-    <!-- TARİH -->
-
-    <div class="date-card">
-
-        <div class="date">
-            💞 13 Mart 2026 — 16:00 💞
-        </div>
-
-        <div class="counter-title">
-            Birlikte olduğumuz süre
-        </div>
-
-        <div class="counter" id="counter">
-            Hesaplanıyor...
-        </div>
-
-    </div>
-
-
-    <!-- HİKAYEMİZ -->
-
-    <div class="section">
-
-        <h2>💌 Bizim Hikâyemiz</h2>
-
-        <div class="message">
-
-            <p>
-            <b>Hayatım,</b>
-            </p>
-
-            <p>
-            Hani ilk bana “...” demiştin ya...
-            İşte o gün başladı bizim hikâyemiz. ❤️
-            </p>
-
-            <p>
-            Çok şükür Rabb'ül Âlemîn bana seni nasip etti
-            ve seninle sevgili olduk.
-            </p>
-
-            <p>
-            Yeri geldi kavga ettik, yeri geldi ayrıldık,
-            yeri geldi birbirimizi anlayamadık.
-            Ama ne olursa olsun, hep tekrar birbirimize döndük
-            ve barıştık.
-            </p>
-
-            <p>
-            Ben Rabb'ime bunun için binlerce kez şükrediyorum.
-            Çünkü seni hayatıma kattığı için gerçekten çok mutluyum.
-            </p>
-
-            <p>
-            Bana deseler ki:
-            <br><br>
-            <b>
-            “Bu hayata tekrar gelsen, neyi tekrar yapmak isterdin?”
-            </b>
-            </p>
-
-            <p>
-            Hiç düşünmeden,
-            <b>“Hacer'imle tekrar sevgili olmak isterdim.”</b>
-            derdim.
-            </p>
-
-            <p>
-            Çünkü seni ne kadar sevdiğimi anlatmaya kelimeler yetmez.
-            </p>
-
-            <p>
-            Belki seni babandan istemek ve seni almak çok zor olacak.
-            Ama ne olursa olsun seni almak için elimden geleni yapacağım.
-            </p>
-
-            <p>
-            Çünkü sen benim için çok değerlisin,
-            canım benim. ❤️🤍
-            </p>
-
-        </div>
-
-        <div class="quote">
-            “Bu hayata tekrar gelsem bile,
-            yine seni seçerdim.” 💗
-        </div>
-
-    </div>
-
-
-    <!-- ŞARKILAR -->
-
-    <div class="section">
-
-        <h2>🎵 Bizim Şarkılarımız</h2>
-
-        <div class="player">
-            <iframe
-                style="border-radius:12px"
-                src="https://open.spotify.com/embed/track/3GQm1FfMFmpoPyOwlo4bqL?utm_source=generator"
-                width="100%"
-                height="152"
-                frameborder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy">
-            </iframe>
-        </div>
-
-        <div class="player">
-            <iframe
-                style="border-radius:12px"
-                src="https://open.spotify.com/embed/track/0SIEoNWvdG94ub3Zf8dZxf?utm_source=generator"
-                width="100%"
-                height="152"
-                frameborder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy">
-            </iframe>
-        </div>
-
-        <div class="player">
-            <iframe
-                style="border-radius:12px"
-                src="https://open.spotify.com/embed/track/24XRuHPSpCzIRgF7uCIaMR?utm_source=generator"
-                width="100%"
-                height="152"
-                frameborder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy">
-            </iframe>
-        </div>
-
-    </div>
-
-
-    <div class="flowers">
-        🌸 💗 🌹 💕 🌷 💗 🌸
-    </div>
-
-    <div class="footer">
-        Hacer ♥ Kadir
-        <br><br>
-        Sonsuza kadar... 🤍
-    </div>
-
-</div>
-
-
-<script>
-
-/* BİRLİKTE GEÇEN SÜRE */
-
-const startDate = new Date("2026-03-13T16:00:00");
-
-function updateCounter(){
-
-    const now = new Date();
-
-    let difference = now - startDate;
-
-    if(difference < 0){
-        document.getElementById("counter").innerHTML =
-        "Hikâyemiz başlamak üzere... 💗";
-        return;
-    }
-
-    let totalSeconds = Math.floor(difference / 1000);
-
-    let days = Math.floor(totalSeconds / 86400);
-
-    let hours = Math.floor(
-        (totalSeconds % 86400) / 3600
-    );
-
-    let minutes = Math.floor(
-        (totalSeconds % 3600) / 60
-    );
-
-    let seconds =
-        totalSeconds % 60;
-
-    document.getElementById("counter").innerHTML =
-        days + " gün " +
-        hours + " saat " +
-        minutes + " dakika " +
-        seconds + " saniye 💕";
-}
-
-updateCounter();
-
-setInterval(updateCounter,1000);
-
-
-/* UÇAN KALPLER */
-
-function createHeart(){
-
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-
-    const emojis = [
-        "💗",
-        "💕",
-        "💖",
-        "💞",
-        "❤️",
-        "🤍",
-        "🌸"
-    ];
-
-    heart.innerHTML =
-        emojis[Math.floor(Math.random()*emojis.length)];
-
-    heart.style.left =
-        Math.random()*100 + "vw";
-
-    heart.style.fontSize =
-        (15 + Math.random()*25) + "px";
-
-    heart.style.animationDuration =
-        (5 + Math.random()*5) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },10000);
-}
-
-setInterval(createHeart,600);
-
-</script>
-
-</body>
-  </html>
+   
